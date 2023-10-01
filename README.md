@@ -1,6 +1,11 @@
 # MPC_tuner
 A python package for the optimization of NMPC implementation options
 
+## Citation
+A full description of the principles and a detailed illustrative example are given in the paper below:
+
+> Mazen Alamir. A framework and a `python`-package for real-time NMPC parameter settings. https://arxiv.org/submit/5142499/
+
 ## Recall on Nonlinear Model Predictive Control
 
 Nonlinear Model Predictive Control **(NMPC)** is the most advanced control design. It enables to take into account nonlinear dynamics, non conventional control objective through the definition of a cost function and the presence of input (control) and state constraints. It is generally based on the repetitive solution of optimal control problems of the following form (soft constraints are used except for the input control saturations):
@@ -18,7 +23,9 @@ $$
 \dot x = f(x,u,p)
 $$
 
-in which $p$ is a vector of model's parameters. Once this problem is solved the first action $u_0$ is applied to the system and the process is repeated in the next **updating instants**
+in which $p$ is a vector of model's parameters. Once this problem is solved the first action $u_0$ is applied to the system and the process is repeated in the next **updating instants**. 
+
+The *raison d'être* of this package is that the above equation and principle still leave many undecided choices that might be mandatory to derive a real-time implementatable algorithm. The next section describes the implementation parameters that the package helps tuning. 
 
 ## The implementation parameters that are tuned by the MPC_tuner package
 
@@ -31,14 +38,18 @@ While the theoretical assessment of NMPC are now clear and freely available solv
 - The sampling period $\tau_p=\dfrac{\tau_u}{\texttt{nstep}}$ for the integration inside the solver. More precisely the tuned parameter is $\mu_d\in [0,1]$ that appears in the following expression `n_steps` $=\lceil 1+\mu_d(\kappa-1)\rceil$
 - The maximum number of iterations `iter_max` allowed for the solver at each updating compuation.
 
+To summarize, the algorithm provided by the package enables to tune the following vector of implementation parameters: 
+
+$$
+\pi := \begin{bmatrix} \kappa\cr \mu_d\cr N_\text{pred}\cr n_\text{ctr}\cr \rho_f\cr \rho_\text{cstr}\cr \texttt{max-iter}\end{bmatrix}
+$$
+
 | Illustration   |      Parameter to tune     | 
 |:----------:|:-------------:|
 |  <img align="center" src="https://github.com/mazenalamir/MPC_tuner/blob/main/images/tau_u.png" width="100%"> |  $\tau_u=\kappa\tau$ The control updating period | 
 |  <img align="center" src="https://github.com/mazenalamir/MPC_tuner/blob/main/images/dof.png" width="100%"> |  The control horizon defining the number of decision instants `n_ctr` |
 |  <img align="center" src="https://github.com/mazenalamir/MPC_tuner/blob/main/images/tau_p.png" width="100%"> |  The sampling period for the integration inside the solver $\tau_p=\frac{\tau_u}{\lceil 1+\mu_d(\kappa-1)\rceil}$ | 
 
-To summarize, the algorithm provided by the package enables to tune the following vector of implementation parameters: 
+## The guiding principles 
 
-$$
-\pi := \begin{bmatrix} \kappa\cr \mu_d\cr N_\text{pred}\cr n_\text{ctr}\cr \rho_f\cr \rho_\text{cstr}\cr \texttt{max-iter}\end{bmatrix}
-$$
+
