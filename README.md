@@ -52,6 +52,9 @@ $$
 
 ## The guiding principles 
 
+The idea is to choose the implementation parameters such that some admissibility conditions are satisfied over **a set $\mathcal A$ of cerifying scenarios** that is randomly sampled. The cardinalty of the set is chosen based on the probabilistic certification rules. The admissibility conditions are described in the following section. 
+
+### The admissibility condition
 The NMPC implementation parameters are chosen such that the following requirements are satisfied:
 
 - The contraction of the cost function at the end of a predefined period of closed-loop simulation
