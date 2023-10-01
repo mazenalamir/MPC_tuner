@@ -13,9 +13,9 @@ While the theoretical assessment of NMPC are now clear and freely available solv
 
 <p align="left">
   <img src="https://github.com/mazenalamir/MPC_tuner/blob/main/images/tau_u.png" width="40%">
-  <p align="left" style="color:blue"> Fig. 1: The control updating period $\tau$ is the basic sampling period.</p>
+  <p align="left" style="color:blue;"> Fig. 1: The control updating period $\tau$ is the basic sampling period.</p>
   <img src="https://github.com/mazenalamir/MPC_tuner/blob/main/images/dof.png" width="40%">
-  <p align="left"> Fig. 2: The sampling period for integration inside the solver.</p>
+  <p align="left"> Fig. 2: The control parameterization / number of degrees of freedom.</p>
   <img src="https://github.com/mazenalamir/MPC_tuner/blob/main/images/tau_p.png" width="40%">
   <p align="left"> Fig. 3: The sampling period for integration inside the solver.</p>
 </p>
