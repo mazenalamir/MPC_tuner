@@ -1,19 +1,26 @@
 # MPC_tuner
 A python package for the optimization of NMPC implementation options
 
+## Recall on Nonlinear Model Predictive Control
+
 Nonlinear Model Predictive Control **(NMPC)** is the most advanced control design. It enables to take into account nonlinear dynamics, non conventional control objective through the definition of a cost function and the presence of input (control) and state constraints. It is generally based on the repetitive solution of optimal control problems of the following form (soft constraints are used except for the input control saturations):
 
 $$
-\min_{\mathbf u} J(\mathbf u\ \vert x_0,p):=\rho_f\Psi(x_N)+\sum_{k=1}^{N} \ell(x_{k},u_{k-1})+ \rho_\text{cstr} \max_{i=1}^{n_c}\lfloor c_i(x_k,u_{k-1})\rfloor_+^2
+\min_{\mathbf u} J(\mathbf u\ \vert x_0,p):=\rho_f\Psi(x_N)+\sum_{k=1}^{N_\text{pred}} \ell(x_{k},u_{k-1})+ \rho_\text{cstr} \max_{i=1}^{n_c}\lfloor c_i(x_k,u_{k-1})\rfloor_+^2
 $$
 
-where $x_k$ are the next states starting from the initial state $x_0$ and given the dynamics: 
+where 
+
+- $\mathbf u:=(u_0,\dots,u_{N_\text{pred}-1})\in \mathbb [R^{n_u}]^{N_\text{pred}}$ is the sequence of control that minimizes the above cost function 
+- $x_k$ are the next states starting from the initial state $x_0$ and given the dynamics: 
 
 $$
 \dot x = f(x,u,p)
 $$
 
-in which $p$ is a vector of model's parameters. 
+in which $p$ is a vector of model's parameters. Once this problem is solved the first action $u_0$ is applied to the system and the process is repeated in the next **updating instants**
+
+## The implementation parameters that are tuned by the MPC_tuner package
 
 While the theoretical assessment of NMPC are now clear and freely available solvers are widely used, it remains true that the final implementation of NMPC involves the choice of the following parameters (see below for some illustrations):
 
@@ -33,5 +40,5 @@ While the theoretical assessment of NMPC are now clear and freely available solv
 To summarize, the algorithm provided by the package enables to tune the following vector of implementation parameters: 
 
 $$
-\pi :=
+\pi := \begin{bmatrix} \kappa\cr \mu_d\cr N_\text{pred}\cr n_\text{ctr}\cr \rho_f\cr \rho_\text{cstr}\cr \texttt{max-iter}\end{bmatrix}
 $$
