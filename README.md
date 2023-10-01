@@ -6,7 +6,8 @@ Nonlinear Model Predictive Control **(NMPC)** is the most advanced control desig
 While the theoretical assessment of NMPC are now clear and freely available solvers are widely used, it remains true that the final implementation of NMPC involves the choice of the following parameters:
 
 - The prediction horizon's length
+- The control updating period
 - The penalties on the soft constraints and on the terminal cost
 - The control parameterization (number of d.o.f)
 - The sampling period for the integration inside the solver
-- The 
+
