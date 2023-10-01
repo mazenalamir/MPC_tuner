@@ -54,11 +54,12 @@ $$
 
 The idea is to choose the implementation parameters such that some admissibility conditions are satisfied over **a set $\mathcal A$ of cerifying scenarios** that is randomly sampled. The cardinalty of the set is chosen based on the probabilistic certification rules. The admissibility conditions are described in the following section. 
 
-### The admissibility condition
+### The admissibility conditions
 The NMPC implementation parameters are chosen such that the following requirements are satisfied:
 
-- The contraction of the cost function at the end of a predefined period of closed-loop simulation
-- The constraints satisfaction at each instants over the closed-loop simulation
-- The real-time compatibility meaning that the computation time is lower than the available time. The latter is computed on a targeted device that might be different from the one on which the package is used. This can be done by using the following threshold on the computation time: `dev_acc` $\times \tau_u$. More precisely, when the computation for a single compuation is lower than `dev_acc` $\times \tau_u$ and this for all the updating instants during the closed-loop simulation then real-time compatibility is conformed **for the simualted scenario**.
+- The **real-time compatibility** meaning that the computation time is lower than the available time. The latter is computed on a targeted device that might be different from the one on which the package is used. This can be done by using the following threshold on the computation time: `dev_acc` $\times \tau_u$. More precisely, when the computation for a single compuation is lower than `dev_acc` $\times \tau_u$ and this for all the updating instants during the closed-loop simulation then real-time compatibility is conformed **for the simualted scenario**.
+- **The contraction** of the cost function at the end of a predefined period of closed-loop simulation
+- **The constraints satisfaction** at each instants over the closed-loop simulation. 
+
 
 
