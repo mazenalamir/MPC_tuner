@@ -19,3 +19,4 @@ While the theoretical assessment of NMPC are now clear and freely available solv
   <img src="https://github.com/mazenalamir/MPC_tuner/blob/main/images/tau_p.png" width="40%">
   <p align="left"> Fig. 3: The sampling period for integration inside the solver.</p>
 </p>
+
