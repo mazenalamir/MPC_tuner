@@ -4,7 +4,7 @@ A python package for the optimization of NMPC implementation options
 ## Citation
 A full description of the principles and a detailed illustrative example are given in the paper below:
 
-> Mazen Alamir. A framework and a `python`-package for real-time NMPC parameter settings. [arXiv:2309.17238](https://arxiv.org/abs/2309.17238) 2023 
+> Mazen Alamir. A framework and a `python`-package for real-time NMPC parameter settings. [arXiv:2309.17238](https://arxiv.org/abs/2309.17238), October, 2023.
 
 ## Recall on Nonlinear Model Predictive Control
 
