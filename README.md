@@ -67,5 +67,20 @@ The NMPC implementation parameters are chosen such that the following requiremen
 
 The figure below shows the main utilities provided by the package as well as the necessary user-defined elements that need to be provided: 
 
+<div align="center">
+<img align="center" src="https://github.com/mazenalamir/MPC_tuner/blob/main/images/packages.png" width="60%">
+<p>Summary of the main classes and functions exported by the package and the user-defined object to prepare for the specific control problem.</p>
+</div>
+
+## Content of the repository
+
+In the list of files, you can find a complete example illustrating the NMPC design for the control of a Planar Vertical Take Of and Landing (PVTOL) nonlinear system. 
+More precisely, the repository contains two files:
+
+- The python file `MPC_tuner.py` containing the package
+- The python file `user_defined_pvtol.py` which contains the PVTOL related files to be used by the package utilities
+- The jupyter notebook `test_MPC_tuner.ipynb` which uses the previous files to find the admissible MPC settings.
+
+Note however that the call of the utitlity `Design_MPC` contained in the `test_MPC_tunner.ipynb uses small values of `N_trials`, `nb` and `nsb` for the sake of illustation. Results similar to the ones obtained in the paper might be obtained by using the corresponding values of the above parameters. 
 
 
