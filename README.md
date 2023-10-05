@@ -83,4 +83,10 @@ More precisely, the repository contains two files:
 
 Note however that the call of the utitlity `Design_MPC` contained in the `test_MPC_tunner.ipynb uses small values of `N_trials`, `nb` and `nsb` for the sake of illustation. Results similar to the ones obtained in the paper might be obtained by using the corresponding values of the above parameters. 
 
+## Typical results 
+
+|   |           | 
+|:----------:|:-------------|
+|  <img align="center" src="https://github.com/mazenalamir/MPC_tuner/blob/main/images/df1_new.png" width="100%"> |  Dataframe showing the set of admissible NMPC settings meeting the convergence, constaints satisfation and real-time implementability on the target device. | 
+|  <img align="center" src="https://github.com/mazenalamir/MPC_tuner/blob/main/images/nDiscard.png" width="100%"> |  Evolution of the number of discarder configurations among the 100 initially sampled when the sub batches of certification scenarios are visited |
 
