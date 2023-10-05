@@ -1,10 +1,14 @@
 # MPC_tuner
 A python package for the optimization of NMPC implementation options
 
+[![DOI](https://www.zenodo.org/badge/698860212.svg)](https://www.zenodo.org/badge/latestdoi/698860212)
+
 ## Citation
 A full description of the principles and a detailed illustrative example are given in the paper below:
 
 > Mazen Alamir. A framework and a `python`-package for real-time NMPC parameter settings. [arXiv:2309.17238](https://arxiv.org/abs/2309.17238), October, 2023.
+
+> Mazen Alamir. (2023). mazenalamir/MPC_tuner: MPC_tuner (1.0). Zenodo. https://doi.org/10.5281/zenodo.8409251
 
 ## Recall on Nonlinear Model Predictive Control
 
